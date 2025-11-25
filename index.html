@@ -3,53 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SlideEdu - Ứng dụng tạo Slide học tập</title>
+  <title>SlideEdu - Tạo Slide học tập nhanh chóng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-    header { background:#4a90e2; color:white; padding:50px 20px; text-align:center; }
-    header h1 { margin:0; font-size:2.5em; }
-    header p { margin-top:10px; font-size:1.2em; }
-    section { padding:40px 20px; max-width:800px; margin:0 auto; }
-    h2 { color:#4a90e2; }
-    a.button { display:inline-block; padding:15px 25px; background:#4a90e2; color:white; text-decoration:none; border-radius:5px; margin-top:20px; }
-    a.button:hover { background:#357ABD; }
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#888; }
-    ul { margin:10px 0 20px 20px; }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background:#f5f7fa; color:#333; }
+    
+    /* Header / Hero */
+    header { background:#4a90e2; color:white; text-align:center; padding:80px 20px; }
+    header h1 { font-size:3em; margin-bottom:10px; }
+    header p { font-size:1.3em; margin-bottom:20px; }
+    header a.button { background:#fff; color:#4a90e2; padding:15px 30px; text-decoration:none; font-weight:700; border-radius:6px; transition:0.3s; }
+    header a.button:hover { background:#e6e6e6; }
+    
+    /* Sections */
+    section { max-width:1000px; margin:0 auto; padding:60px 20px; }
+    h2 { color:#4a90e2; margin-bottom:20px; text-align:center; font-size:2em; }
+    .features, .howto { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+    .feature, .step { background:white; padding:25px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    .feature h3, .step h3 { margin-bottom:15px; color:#4a90e2; font-size:1.2em; }
+    
+    /* Download Section */
+    .download { text-align:center; }
+    .download a { display:inline-block; background:#4a90e2; color:white; padding:15px 35px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s; }
+    .download a:hover { background:#357ABD; }
+    
+    /* Footer */
+    footer { text-align:center; padding:30px 20px; font-size:0.9em; color:#777; background:#f0f0f0; margin-top:40px; }
+    
+    @media (max-width:600px) {
+      header h1 { font-size:2.2em; }
+      header p { font-size:1em; }
+    }
   </style>
 </head>
 <body>
 
+<!-- Header / Hero -->
 <header>
   <h1>SlideEdu</h1>
-  <p>Ứng dụng tạo slide học tập nhanh chóng và trực quan</p>
+  <p>Tạo Slide học tập trực quan – nhanh chóng – dễ dàng</p>
+  <a class="button" href="https://github.com/<USERNAME>/<REPO>/releases/download/v1.0.0/SlideEdu.exe" target="_blank">Tải SlideEdu.exe</a>
 </header>
 
+<!-- Features Section -->
 <section>
-  <h2>Giới thiệu</h2>
-  <p>SlideEdu giúp giáo viên và học viên tạo bài giảng, slide học tập, và tài liệu trực quan mà không cần kỹ năng thiết kế. Hỗ trợ LaTeX, chèn hình ảnh, sơ đồ, xuất PDF/PNG.</p>
-
   <h2>Tính năng nổi bật</h2>
-  <ul>
-    <li>Tạo slide học tập nhanh và gọn gàng</li>
-    <li>Hỗ trợ công thức toán học bằng LaTeX</li>
-    <li>Chèn hình ảnh, sơ đồ, minh họa dễ dàng</li>
-    <li>Xuất file PDF hoặc PNG để chia sẻ</li>
-    <li>Giao diện đơn giản, dễ sử dụng cho người mới</li>
-  </ul>
-
-  <h2>Download SlideEdu</h2>
-  <a class="button" href="https://github.com/<USERNAME>/<REPO>/releases/download/v1.0.0/SlideEdu.exe" target="_blank">
-    Tải SlideEdu.exe
-  </a>
-  
-  <p style="margin-top:20px; font-size:0.9em;">
-    Phiên bản: 1.0.0 | Dung lượng: 20MB (ví dụ)  
-    <br>Để góp ý hoặc báo lỗi: <a href="https://github.com/<USERNAME>/<REPO>/issues" target="_blank">GitHub Issues</a>
-  </p>
+  <div class="features">
+    <div class="feature">
+      <h3>Tạo slide nhanh</h3>
+      <p>Nhập nội dung, SlideEdu tự dàn trang gọn gàng. Có nhiều layout tối ưu cho bài giảng.</p>
+    </div>
+    <div class="feature">
+      <h3>Hỗ trợ LaTeX</h3>
+      <p>Chèn công thức toán học dễ dàng, hiển thị đẹp, rõ ràng trên slide.</p>
+    </div>
+    <div class="feature">
+      <h3>Chèn hình ảnh & sơ đồ</h3>
+      <p>Kéo-thả hình ảnh, tự động căn chỉnh tỷ lệ, minh họa trực quan cho bài học.</p>
+    </div>
+    <div class="feature">
+      <h3>Xuất PDF & PNG</h3>
+      <p>Dễ dàng chia sẻ slide, in ấn hoặc đăng lên các nền tảng học trực tuyến.</p>
+    </div>
+    <div class="feature">
+      <h3>Giao diện thân thiện</h3>
+      <p>Dễ sử dụng cho người mới, không yêu cầu kỹ năng thiết kế.</p>
+    </div>
+  </div>
 </section>
 
+<!-- How to Use Section -->
+<section>
+  <h2>Cách sử dụng SlideEdu</h2>
+  <div class="howto">
+    <div class="step">
+      <h3>Bước 1: Tải và cài đặt</h3>
+      <p>Tải SlideEdu.exe từ nút Download và chạy để cài đặt trên Windows.</p>
+    </div>
+    <div class="step">
+      <h3>Bước 2: Nhập nội dung</h3>
+      <p>Nhập text, công thức LaTeX, hoặc chèn hình ảnh cho slide.</p>
+    </div>
+    <div class="step">
+      <h3>Bước 3: Dàn trang & chỉnh sửa</h3>
+      <p>Chọn layout, thêm tiêu đề, hình minh họa và tùy chỉnh font, màu sắc.</p>
+    </div>
+    <div class="step">
+      <h3>Bước 4: Xuất slide</h3>
+      <p>Lưu slide dưới dạng PDF hoặc PNG để chia sẻ hoặc in ấn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Download Section -->
+<section class="download">
+  <h2>Tải SlideEdu</h2>
+  <a href="https://github.com/<USERNAME>/<REPO>/releases/download/v1.0.0/SlideEdu.exe" target="_blank">Tải ngay</a>
+  <p style="margin-top:15px;">Phiên bản: 1.0.0 | Dung lượng: 20MB (ví dụ)</p>
+</section>
+
+<!-- Footer -->
 <footer>
-  &copy; 2025 SlideEdu. All rights reserved.
+  &copy; 2025 SlideEdu. All rights reserved. | Báo lỗi hoặc góp ý: <a href="https://github.com/<USERNAME>/<REPO>/issues" target="_blank">GitHub Issues</a>
 </footer>
 
 </body>
