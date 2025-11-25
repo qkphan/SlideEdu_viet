@@ -3,78 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SlideEdu - Tạo Slide học tập nhanh chóng</title>
+  <title>SlideEdu - Online Learning Tool</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background:#f5f7fa; color:#333; }
-    
-    /* Header / Hero */
-    header { background:#4a90e2; color:white; text-align:center; padding:80px 20px; }
-    header h1 { font-size:3em; margin-bottom:10px; }
-    header p { font-size:1.3em; margin-bottom:20px; }
-    header a.button { background:#fff; color:#4a90e2; padding:15px 30px; text-decoration:none; font-weight:700; border-radius:6px; transition:0.3s; }
-    header a.button:hover { background:#e6e6e6; }
-    
+    body { font-family: 'Roboto', sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
+
+    /* Navbar */
+    nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#4a90e2; color:white; }
+    nav .logo { font-size:1.5em; font-weight:700; }
+    nav a { color:white; text-decoration:none; margin-left:20px; font-weight:500; }
+    nav a:hover { text-decoration:underline; }
+
+    /* Hero Section */
+    .hero { text-align:center; padding:80px 20px; background:#4a90e2; color:white; }
+    .hero h1 { font-size:3em; margin-bottom:20px; }
+    .hero p { font-size:1.3em; margin-bottom:30px; }
+    .hero a.button { background:#fff; color:#4a90e2; padding:15px 35px; border-radius:8px; font-weight:700; text-decoration:none; transition:0.3s; }
+    .hero a.button:hover { background:#e6e6e6; }
+
     /* Sections */
-    section { max-width:1000px; margin:0 auto; padding:60px 20px; }
-    h2 { color:#4a90e2; margin-bottom:20px; text-align:center; font-size:2em; }
-    .features, .howto { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
-    .feature, .step { background:white; padding:25px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-    .feature h3, .step h3 { margin-bottom:15px; color:#4a90e2; font-size:1.2em; }
-    
+    section { max-width:1100px; margin:0 auto; padding:60px 20px; }
+
+    h2 { text-align:center; color:#4a90e2; margin-bottom:40px; font-size:2.2em; }
+
+    /* Features Cards */
+    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+    .feature-card { background:white; padding:25px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); transition:0.3s; }
+    .feature-card:hover { transform:translateY(-5px); box-shadow:0 6px 25px rgba(0,0,0,0.12); }
+    .feature-card h3 { color:#4a90e2; margin-bottom:15px; }
+    .feature-card p { font-size:0.95em; }
+
+    /* How To Use */
+    .howto { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:25px; }
+    .step { background:white; padding:20px; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.08); }
+    .step h3 { color:#4a90e2; margin-bottom:10px; }
+    .step p { font-size:0.95em; }
+
     /* Download Section */
     .download { text-align:center; }
-    .download a { display:inline-block; background:#4a90e2; color:white; padding:15px 35px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s; }
+    .download ul { list-style:none; padding:0; }
+    .download li { margin:15px 0; }
+    .download a { display:inline-block; background:#4a90e2; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s; }
     .download a:hover { background:#357ABD; }
-    
+
     /* Footer */
-    footer { text-align:center; padding:30px 20px; font-size:0.9em; color:#777; background:#f0f0f0; margin-top:40px; }
-    
-    @media (max-width:600px) {
-      header h1 { font-size:2.2em; }
-      header p { font-size:1em; }
+    footer { text-align:center; padding:30px 20px; font-size:0.9em; color:#555; background:#e6ebf1; margin-top:40px; }
+
+    /* Responsive */
+    @media (max-width:600px){
+      nav { flex-direction:column; align-items:flex-start; }
+      nav a { margin-left:0; margin-top:10px; }
+      .hero h1 { font-size:2em; }
+      .hero p { font-size:1em; }
     }
   </style>
 </head>
 <body>
 
-<!-- Header / Hero -->
-<header>
+<!-- Navbar -->
+<nav>
+  <div class="logo">SlideEdu</div>
+  <div class="menu">
+    <a href="#features">Tính năng</a>
+    <a href="#howto">Hướng dẫn</a>
+    <a href="#download">Download</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
   <h1>SlideEdu</h1>
-  <p>Tạo Slide học tập trực quan – nhanh chóng – dễ dàng</p>
-  <a class="button" href="https://github.com/qkphan/SlideEdu_viet/releases/download/v1.0.0/SlideEdu.exe" target="_blank">Tải SlideEdu.exe</a>
-</header>
+  <p>Tạo slide học tập trực quan – nhanh chóng – dễ dàng</p>
+  <a class="button" href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.exe" target="_blank">Tải SlideEdu.exe</a>
+</section>
 
 <!-- Features Section -->
-<section>
+<section id="features">
   <h2>Tính năng nổi bật</h2>
   <div class="features">
-    <div class="feature">
+    <div class="feature-card">
       <h3>Tạo slide nhanh</h3>
       <p>Nhập nội dung, SlideEdu tự dàn trang gọn gàng. Có nhiều layout tối ưu cho bài giảng.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h3>Hỗ trợ LaTeX</h3>
-      <p>Chèn công thức toán học dễ dàng, hiển thị đẹp, rõ ràng trên slide.</p>
+      <p>Chèn công thức toán học dễ dàng, hiển thị đẹp và chuẩn trên slide.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h3>Chèn hình ảnh & sơ đồ</h3>
       <p>Kéo-thả hình ảnh, tự động căn chỉnh tỷ lệ, minh họa trực quan cho bài học.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h3>Xuất PDF & PNG</h3>
-      <p>Dễ dàng chia sẻ slide, in ấn hoặc đăng lên các nền tảng học trực tuyến.</p>
+      <p>Dễ dàng chia sẻ slide, in ấn hoặc đăng lên nền tảng học trực tuyến.</p>
     </div>
-    <div class="feature">
+    <div class="feature-card">
       <h3>Giao diện thân thiện</h3>
       <p>Dễ sử dụng cho người mới, không yêu cầu kỹ năng thiết kế.</p>
     </div>
   </div>
 </section>
 
-<!-- How to Use Section -->
-<section>
+<!-- How To Use Section -->
+<section id="howto">
   <h2>Cách sử dụng SlideEdu</h2>
   <div class="howto">
     <div class="step">
@@ -83,7 +115,7 @@
     </div>
     <div class="step">
       <h3>Bước 2: Nhập nội dung</h3>
-      <p>Nhập text, công thức LaTeX, hoặc chèn hình ảnh cho slide.</p>
+      <p>Nhập text, công thức LaTeX hoặc chèn hình ảnh cho slide.</p>
     </div>
     <div class="step">
       <h3>Bước 3: Dàn trang & chỉnh sửa</h3>
@@ -96,7 +128,8 @@
   </div>
 </section>
 
-<section class="download">
+<!-- Download Section -->
+<section id="download" class="download">
   <h2>Tải các file SlideEdu</h2>
   <ul>
     <li><a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.exe" target="_blank">SlideEdu.exe</a> – Bản cài Windows</li>
