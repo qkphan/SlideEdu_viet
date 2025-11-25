@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SlideEdu - Online Learning Tool</title>
+  <title>Hướng dẫn sử dụng SlideEdu</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Roboto', sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
+    body { font-family: 'Roboto', sans-serif; line-height:1.6; background:#f0f4f8; color:#333; }
 
     /* Navbar */
     nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#4a90e2; color:white; }
@@ -16,39 +16,24 @@
     nav a:hover { text-decoration:underline; }
 
     /* Hero Section */
-    .hero { text-align:center; padding:80px 20px; background:#4a90e2; color:white; }
-    .hero h1 { font-size:3em; margin-bottom:20px; }
-    .hero p { font-size:1.3em; margin-bottom:30px; }
-    .hero a.button { background:#fff; color:#4a90e2; padding:15px 35px; border-radius:8px; font-weight:700; text-decoration:none; transition:0.3s; }
-    .hero a.button:hover { background:#e6e6e6; }
+    .hero { text-align:center; padding:60px 20px; background:#4a90e2; color:white; }
+    .hero h1 { font-size:2.8em; margin-bottom:15px; }
+    .hero p { font-size:1.2em; margin-bottom:25px; }
+    
+    /* Main Content */
+    main { max-width:1000px; margin:20px auto; padding:20px; background:white; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
 
-    /* Sections */
-    section { max-width:1100px; margin:0 auto; padding:60px 20px; }
+    h2 { color:#4a90e2; margin-top:30px; margin-bottom:20px; text-align:center; }
+    h3 { color:#4a90e2; margin-bottom:10px; }
 
-    h2 { text-align:center; color:#4a90e2; margin-bottom:40px; font-size:2.2em; }
+    ul, ol { margin-left:20px; margin-bottom:15px; }
+    li { margin-bottom:8px; }
+    code { background-color:#eef; padding:2px 6px; border-radius:4px; font-family: monospace; }
 
-    /* Features Cards */
-    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
-    .feature-card { background:white; padding:25px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); transition:0.3s; }
-    .feature-card:hover { transform:translateY(-5px); box-shadow:0 6px 25px rgba(0,0,0,0.12); }
-    .feature-card h3 { color:#4a90e2; margin-bottom:15px; }
-    .feature-card p { font-size:0.95em; }
+    .note { background-color:#fff3cd; border-left:6px solid #ffeeba; padding:10px; margin:15px 0; border-radius:6px; }
 
-    /* How To Use */
-    .howto { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:25px; }
-    .step { background:white; padding:20px; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.08); }
-    .step h3 { color:#4a90e2; margin-bottom:10px; }
-    .step p { font-size:0.95em; }
-
-    /* Download Section */
-    .download { text-align:center; }
-    .download ul { list-style:none; padding:0; }
-    .download li { margin:15px 0; }
-    .download a { display:inline-block; background:#4a90e2; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s; }
-    .download a:hover { background:#357ABD; }
-
-    /* Footer */
-    footer { text-align:center; padding:30px 20px; font-size:0.9em; color:#555; background:#e6ebf1; margin-top:40px; }
+    /* Section Cards for features or flow */
+    .card { background:#fdfdfd; padding:15px 20px; border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.08); margin-bottom:15px; }
 
     /* Responsive */
     @media (max-width:600px){
@@ -65,84 +50,116 @@
 <nav>
   <div class="logo">SlideEdu</div>
   <div class="menu">
-    <a href="#features">Tính năng</a>
-    <a href="#howto">Hướng dẫn</a>
-    <a href="#download">Download</a>
+    <a href="#intro">Giới thiệu</a>
+    <a href="#install">Cài đặt</a>
+    <a href="#ui">Giao diện</a>
+    <a href="#usage">Hướng dẫn</a>
+    <a href="#tips">Mẹo & Ghi chú</a>
+    <a href="#flow">Flow tổng thể</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>SlideEdu</h1>
-  <p>Tạo slide học tập trực quan – nhanh chóng – dễ dàng</p>
-  <a class="button" href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.exe" target="_blank">Tải SlideEdu.exe</a>
+  <h1>Hướng dẫn sử dụng SlideEdu</h1>
+  <p>Tạo slide hỗ trợ giảng dạy học tập, soạn giáo án, đề kiểm tra nhanh chóng với AI</p>
 </section>
 
-<!-- Features Section -->
-<section id="features">
-  <h2>Tính năng nổi bật</h2>
-  <div class="features">
-    <div class="feature-card">
-      <h3>Tạo slide nhanh</h3>
-      <p>Nhập nội dung, SlideEdu tự dàn trang gọn gàng. Có nhiều layout tối ưu cho bài giảng.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Hỗ trợ LaTeX</h3>
-      <p>Chèn công thức toán học dễ dàng, hiển thị đẹp và chuẩn trên slide.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Chèn hình ảnh & sơ đồ</h3>
-      <p>Kéo-thả hình ảnh, tự động căn chỉnh tỷ lệ, minh họa trực quan cho bài học.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Xuất PDF & PNG</h3>
-      <p>Dễ dàng chia sẻ slide, in ấn hoặc đăng lên nền tảng học trực tuyến.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Giao diện thân thiện</h3>
-      <p>Dễ sử dụng cho người mới, không yêu cầu kỹ năng thiết kế.</p>
-    </div>
-  </div>
-</section>
+<!-- Main Content -->
+<main>
+  <section id="intro">
+    <h2>1. Giới thiệu</h2>
+    <p>SlideEdu là một công cụ hỗ trợ tạo slide, bài tập, tóm tắt, và giáo án học tập dựa trên AI. 
+       Người dùng có thể nhập chủ đề và nhận về mã LaTeX, sau đó biên dịch thành PDF sẵn sàng sử dụng.</p>
+  </section>
 
-<!-- How To Use Section -->
-<section id="howto">
-  <h2>Cách sử dụng SlideEdu</h2>
-  <div class="howto">
-    <div class="step">
-      <h3>Bước 1: Tải và cài đặt</h3>
-      <p>Tải SlideEdu.exe từ nút Download và chạy để cài đặt trên Windows.</p>
+  <section id="install">
+    <h2>2. Cài đặt</h2>
+    <div class="card">
+        <ol>
+        <li>Khởi chạy ứng dụng: <code>SlideEdu.exe</code></li>
+        <li>Nhập key <code>SLIDE_EDU_KEY</code> được kèm trong <code>key.txt</code> nếu ứng dụng yêu cầu.</li>
+        </ol>
+        <p style="margin-top:15px; font-weight:600;">Tải các file cần thiết:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:10px;">
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.exe" target="_blank" 
+            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">SlideEdu.exe</a>
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/key.txt" target="_blank"
+            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">key.txt</a>
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.rar" target="_blank"
+            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">SlideEdu.rar</a>
+        </div>
     </div>
-    <div class="step">
-      <h3>Bước 2: Nhập nội dung</h3>
-      <p>Nhập text, công thức LaTeX hoặc chèn hình ảnh cho slide.</p>
-    </div>
-    <div class="step">
-      <h3>Bước 3: Dàn trang & chỉnh sửa</h3>
-      <p>Chọn layout, thêm tiêu đề, hình minh họa và tùy chỉnh font, màu sắc.</p>
-    </div>
-    <div class="step">
-      <h3>Bước 4: Xuất slide</h3>
-      <p>Lưu slide dưới dạng PDF hoặc PNG để chia sẻ hoặc in ấn.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Download Section -->
-<section id="download" class="download">
-  <h2>Tải các file SlideEdu</h2>
-  <ul>
-    <li><a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.exe" target="_blank">SlideEdu.exe</a> – Bản cài Windows</li>
-    <li><a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/key.txt" target="_blank">key.txt</a> – Key dùng chung miễn phí</li>
-    <li><a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.rar" target="_blank">SlideEdu.rar</a> – File nén</li>
-  </ul>
-  <p>Lưu ý: key.txt là key chung, không giới hạn người dùng.</p>
-</section>
 
-<!-- Footer -->
-<footer>
-  &copy; 2025 SlideEdu. All rights reserved. | Báo lỗi hoặc góp ý: <a href="https://github.com/qkphan/SlideEdu/issues" target="_blank">GitHub Issues</a>
-</footer>
+  <section id="ui">
+    <h2>3. Các thành phần chính của giao diện</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Tiêu đề & Chủ đề:</strong> Nhập tiêu đề slide và chủ đề bài học.</li>
+        <li><strong>Prompt:</strong> Khu vực nhập câu lệnh chi tiết cho AI.</li>
+        <li><strong>Editor LaTeX:</strong> Hiển thị code LaTeX tạo slide hoặc bài tập.</li>
+        <li><strong>Chat AI:</strong> Giao tiếp trực tiếp với AI để gợi ý nội dung hoặc chỉnh sửa.</li>
+        <li><strong>Nút chức năng:</strong> Generate Slide, Compile PDF, Mở PDF, Lưu PDF, Mở Overleaf.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="usage">
+    <h2>4. Hướng dẫn sử dụng</h2>
+    <div class="card">
+      <ol>
+        <li><strong>Chọn template:</strong> Chọn template phù hợp (Slide, Bài tập, Giáo án,...)</li>
+        <li><strong>Nhập tiêu đề & chủ đề:</strong> Điền thông tin vào <code>Tiêu đề</code> và <code>Chủ đề</code>.</li>
+        <li><strong>Soạn prompt:</strong> Nội dung slide được AI tạo tự động.</li>
+        <li><strong>Generate slide:</strong> Nhấn <code>Generate Slide</code> → AI trả về LaTeX code.</li>
+        <li><strong>Chỉnh sửa LaTeX:</strong> Tùy chỉnh mã nếu muốn điều chỉnh nội dung hoặc định dạng.</li>
+        <li><strong>Compile PDF:</strong> Nhấn <code>Compile PDF</code> → tạo file PDF.</li>
+        <li><strong>Mở & lưu file:</strong>
+          <ul>
+            <li>Nhấn <code>Open PDF</code> để xem.</li>
+            <li>Nhấn <code>Save PDF</code> để lưu vào thư mục chọn.</li>
+            <li>Nhấn <code>Open in Overleaf</code> để chỉnh sửa trực tuyến.</li>
+          </ul>
+        </li>
+        <li><strong>Chat AI hỗ trợ:</strong> Sử dụng khung chat để AI cải thiện nội dung hoặc tạo bài tập bổ sung.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2>5. Mẹo & Ghi chú</h2>
+    <div class="card">
+      <ul>
+        <li>Luôn lưu prompt và LaTeX code để tránh mất dữ liệu.</li>
+        <li>Sử dụng template phù hợp để giảm thời gian chỉnh sửa.</li>
+        <li>Nếu lỗi compile PDF, kiểm tra cú pháp LaTeX.</li>
+        <li>API key <code>SLIDE_EDU_KEY</code> cần hợp lệ để kết nối AI server.</li>
+      </ul>
+      <div class="note">
+        <strong>Lưu ý:</strong> SlideEdu yêu cầu kết nối Internet để liên hệ với AI server.
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <h2>6. Flow tổng thể</h2>
+    <div class="card">
+      <ol>
+        <li>Nhập API key nếu chưa có.</li>
+        <li>Nhập tiêu đề và chủ đề → Generate LaTeX code.</li>
+        <li>Hiển thị code trong editor → chỉnh sửa tùy ý.</li>
+        <li>Compile LaTeX → PDF → mở hoặc lưu file.</li>
+        <li>Chat AI hỗ trợ tương tác và gợi ý nội dung.</li>
+      </ol>
+    </div>
+  </section>
+
+  <p style="text-align:center; margin-top:30px; font-style:italic;">
+    SlideEdu - Nâng cao hiệu quả học tập và soạn slide nhanh chóng
+  </p>
+</main>
 
 </body>
 </html>
