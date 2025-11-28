@@ -42,16 +42,11 @@
 <body>
 
 <!-- WebView Warning (ẩn bằng JS nếu không phải Zalo/Telegram) -->
-<div id="webview-warning" style="display:none; padding:20px; background:#fff3cd; text-align:center; font-size:18px;">
-  ⚠️ Ứng dụng đang mở trong WebView (Zalo / Telegram / App).  
-  <br><br>
-  👉 Vui lòng <strong>mở bằng Chrome</strong> để tải file bình thường.
-  <br><br>
-  <a id="open-chrome" href="https://slideedu-viet.onrender.com/" target="_blank" style="font-size:20px; color:#007bff; font-weight:bold;">
-    Nhấn vào đây để mở ngoài trình duyệt
-  </a>
+<div id="webview-warning" class="warning">
+  ⚠️ Bạn đang mở trong WebView (Zalo/Telegram/FB...).<br>
+  👉 Vui lòng mở bằng Chrome hoặc trình duyệt khác để tải file.<br><br>
+  <a href="#" id="open-chrome" class="btn-download">Mở Chrome / Copy link</a>
 </div>
-
 
 
 <!-- Nội dung chính -->
@@ -179,21 +174,34 @@
 
 </main>
 <script>
-(function () {
-  const ua = navigator.userAgent;
-  const isWebView =
-    ua.includes("Zalo") ||
-    ua.includes("ZaloWebView") ||
-    ua.includes("Line") ||
-    ua.includes("FBAN") ||
-    ua.includes("FBAV") ||
-    ua.includes("Instagram") ||
-    ua.includes("webview") ||
-    ua.includes("Telegram");
+(function() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isWebView = ua.includes("zalo") || ua.includes("line") || ua.includes("fbav") || ua.includes("fban") || ua.includes("instagram") || ua.includes("webview") || ua.includes("telegram");
+
+  const warningDiv = document.getElementById("webview-warning");
+  const openChromeBtn = document.getElementById("open-chrome");
 
   if (isWebView) {
-    document.getElementById("webview-warning").style.display = "block";
-    document.getElementById("open-chrome").href = window.location.href;
+    // Hiện cảnh báo WebView
+    warningDiv.style.display = "block";
+
+    // Nút mở Chrome hoặc alert copy link
+    openChromeBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      alert("Hãy mở trang này bằng Chrome/Edge/Firefox để tải file:\n\nhttps://slideedu-viet.onrender.com/");
+    });
+
+    // Ngăn download trực tiếp trong WebView
+    const downloadLinks = document.querySelectorAll(".btn-download");
+    downloadLinks.forEach(a => {
+      a.addEventListener("click", function(e){ e.preventDefault(); alert("WebView chặn download, vui lòng mở Chrome/Edge để tải file."); });
+    });
+  } else {
+    // Trình duyệt bình thường: mở link mới tab
+    const downloadLinks = document.querySelectorAll(".btn-download");
+    downloadLinks.forEach(a => {
+      a.setAttribute("target", "_blank"); // mở tab mới
+    });
   }
 })();
 </script>
