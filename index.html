@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hướng dẫn sử dụng SlideEdu Việt</title>
+  <title>Hướng dẫn sử dụng SlideEdu</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin:0; padding:0; }
     body { font-family: 'Roboto', sans-serif; line-height:1.6; background:#f0f4f8; color:#333; }
 
-    /* Navbar */
     nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#4a90e2; color:white; }
     nav .logo { font-size:1.5em; font-weight:700; }
     nav a { color:white; text-decoration:none; margin-left:20px; font-weight:500; }
     nav a:hover { text-decoration:underline; }
 
-    /* Hero Section */
     .hero { text-align:center; padding:60px 20px; background:#4a90e2; color:white; }
     .hero h1 { font-size:2.8em; margin-bottom:15px; }
     .hero p { font-size:1.2em; margin-bottom:25px; }
     
-    /* Main Content */
     main { max-width:1000px; margin:20px auto; padding:20px; background:white; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
 
     h2 { color:#4a90e2; margin-top:30px; margin-bottom:20px; text-align:center; }
@@ -32,10 +29,8 @@
 
     .note { background-color:#fff3cd; border-left:6px solid #ffeeba; padding:10px; margin:15px 0; border-radius:6px; }
 
-    /* Section Cards for features or flow */
     .card { background:#fdfdfd; padding:15px 20px; border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.08); margin-bottom:15px; }
 
-    /* Responsive */
     @media (max-width:600px){
       nav { flex-direction:column; align-items:flex-start; }
       nav a { margin-left:0; margin-top:10px; }
@@ -46,9 +41,22 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- WebView Warning (ẩn bằng JS nếu không phải Zalo/Telegram) -->
+<div id="webview-warning" style="display:none; padding:20px; background:#fff3cd; text-align:center; font-size:18px;">
+  ⚠️ Ứng dụng đang mở trong WebView (Zalo / Telegram / App).  
+  <br><br>
+  👉 Vui lòng <strong>mở bằng Chrome</strong> để tải file bình thường.
+  <br><br>
+  <a id="open-chrome" href="#" target="_blank" style="font-size:20px; color:#007bff; font-weight:bold;">
+    Nhấn vào đây để mở ngoài trình duyệt
+  </a>
+</div>
+
+
+
+<!-- Nội dung chính -->
 <nav>
-  <div class="logo">SlideEdu Việt</div>
+  <div class="logo">SlideEdu</div>
   <div class="menu">
     <a href="#intro">Giới thiệu</a>
     <a href="#install">Cài đặt</a>
@@ -59,49 +67,55 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
 <section class="hero">
   <h1>Hướng dẫn sử dụng SlideEdu Việt</h1>
-  <p>Tạo slide hỗ trợ giảng dạy học tập, soạn giáo án, đề kiểm tra nhanh chóng với AI</p>
+  <p>Tạo slide trình chiếu giảng dạy, học tập, soạn giáo án, tạo đề kiểm tra và các tính năng hổ trợ khác hữu ích, nhanh chóng với AI</p>
 </section>
 
-<!-- Main Content -->
 <main>
+
   <section id="intro">
     <h2>1. Giới thiệu</h2>
-    <p>SlideEdu là một công cụ hỗ trợ tạo slide, bài tập, tóm tắt, và giáo án học tập dựa trên AI. 
-       Người dùng có thể nhập chủ đề và nhận về mã LaTeX, sau đó biên dịch thành PDF sẵn sàng sử dụng.</p>
+    <p>SlideEdu Việt là một công cụ hỗ trợ tạo slide bài giảng, giáo án, đề kiểm tra, bài tập, tóm tắt, tạo hội thoại,... dựa trên AI. 
+       Người dùng có thể nhập chủ đề, các yêu cầu về nội dung và nhận về mã LaTeX, sau đó biên dịch thành PDF sẵn sàng sử dụng. Hiện tại chỉ mới ra phiên bản chạy trên máy tính cho hệ điều hành Windows. Xem hướng dẫn cách thực hiện để AI cho sản phẩm tốt nhất tại link:...</p>
   </section>
 
   <section id="install">
     <h2>2. Cài đặt</h2>
     <div class="card">
-        <ol>
+      <ol>
+        <li>Tạo một thư mục trên máy tính hoặc laptop đặt tên tùy ý (SlideEdu Việt).</li>
+        <li>Tải các file SlideEdu.exe và key.txt vào thư mục vừa tạo.</li>
+        <li>Mở file key.txt để lấy key.</li>
         <li>Khởi chạy ứng dụng: <code>SlideEdu.exe</code></li>
-        <li>Nhập key <code>SLIDE_EDU_KEY</code> được kèm trong <code>key.txt</code> nếu ứng dụng yêu cầu.</li>
-        </ol>
-        <p style="margin-top:15px; font-weight:600;">Tải các file cần thiết:</p>
-        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:10px;">
-        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.v1.exe" target="_blank" 
-            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">SlideEdu.exe</a>
-        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/key.txt" target="_blank"
-            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">key.txt</a>
-        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.rar" target="_blank"
-            style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; transition:0.3s;">SlideEdu.rar</a>
-        </div>
-    </div>
-    </section>
+        <li>Nhập key <code>SLIDE_EDU_KEY</code> lấy từ <code>key.txt</code> nếu ứng dụng yêu cầu.</li>
+        <li>Bạn có thể không làm như trên mà tải file SlideEdu.rar xuống máy. Giải nén vào thư mục bạn muốn rồi chạy file SlideEdu.v1.exe hoặc SlideEdu.exe.</li>
+        <li>Lưu ý nếu máy bạn có phần mềm kiểm tra virus thì cần điều chỉnh để cho phép chạy các file .exe ở trên.</li>
+      </ol>
 
+      <p style="margin-top:15px; font-weight:600;">Tải các file cần thiết:</p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:10px;">
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.v1.exe" target="_blank"
+          style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700;">SlideEdu.exe</a>
+
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/key.txt" target="_blank"
+          style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700;">key.txt</a>
+
+        <a href="https://github.com/qkphan/SlideEdu/releases/download/v1.0.0/SlideEdu.rar" target="_blank"
+          style="display:inline-block; background:#4a90e2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700;">SlideEdu.rar</a>
+      </div>
+    </div>
+  </section>
 
   <section id="ui">
     <h2>3. Các thành phần chính của giao diện</h2>
     <div class="card">
       <ul>
-        <li><strong>Tiêu đề & Chủ đề:</strong> Nhập tiêu đề slide và chủ đề bài học.</li>
-        <li><strong>Prompt:</strong> Khu vực nhập câu lệnh chi tiết cho AI.</li>
-        <li><strong>Editor LaTeX:</strong> Hiển thị code LaTeX tạo slide hoặc bài tập.</li>
-        <li><strong>Chat AI:</strong> Giao tiếp trực tiếp với AI để gợi ý nội dung hoặc chỉnh sửa.</li>
-        <li><strong>Nút chức năng:</strong> Generate Slide, Compile PDF, Mở PDF, Lưu PDF, Mở Overleaf.</li>
+        <li><strong>Tiêu đề & Chủ đề:</strong> Nhập tên bài học, chủ đề.</li>
+        <li><strong>Editor LaTeX:</strong> Soạn và chỉnh sửa mã LaTeX.</li>
+        <li><strong>Chat AI:</strong> Đề xuất nội dung hoặc chỉnh sửa.</li>
+        <li><strong>Nút chức năng:</strong> Generate Slide, Compile PDF, Open PDF,…</li>
       </ul>
     </div>
   </section>
@@ -110,20 +124,13 @@
     <h2>4. Hướng dẫn sử dụng</h2>
     <div class="card">
       <ol>
-        <li><strong>Chọn template:</strong> Chọn template phù hợp (Slide, Bài tập, Giáo án,...)</li>
-        <li><strong>Nhập tiêu đề & chủ đề:</strong> Điền thông tin vào <code>Tiêu đề</code> và <code>Chủ đề</code>.</li>
-        <li><strong>Soạn prompt:</strong> Nội dung slide được AI tạo tự động.</li>
-        <li><strong>Generate slide:</strong> Nhấn <code>Generate Slide</code> → AI trả về LaTeX code.</li>
-        <li><strong>Chỉnh sửa LaTeX:</strong> Tùy chỉnh mã nếu muốn điều chỉnh nội dung hoặc định dạng.</li>
-        <li><strong>Compile PDF:</strong> Nhấn <code>Compile PDF</code> → tạo file PDF.</li>
-        <li><strong>Mở & lưu file:</strong>
-          <ul>
-            <li>Nhấn <code>Open PDF</code> để xem.</li>
-            <li>Nhấn <code>Save PDF</code> để lưu vào thư mục chọn.</li>
-            <li>Nhấn <code>Open in Overleaf</code> để chỉnh sửa trực tuyến.</li>
-          </ul>
-        </li>
-        <li><strong>Chat AI hỗ trợ:</strong> Sử dụng khung chat để AI cải thiện nội dung hoặc tạo bài tập bổ sung.</li>
+        <li>Chọn template phù hợp.</li>
+        <li>Nhập tiêu đề & chủ đề (chủ đề càng cụ thể, nội dung trình chiếu càng đầy đủ. Xem hướng dẫn nhập chủ đề tốt nhất tại địa chỉ:...).</li>
+        <li>Nhấn <code>Generate Slide</code> để lấy LaTeX.</li>
+        <li>Chỉnh sửa LaTeX nếu muốn.</li>
+        <li>Nhấn <code>Compile PDF</code>.</li>
+        <li>Open / Save PDF hoặc mở Overleaf để điều chỉnh nội dung.</li>
+        <li>Sử dụng Chat AI để cải thiện nội dung.</li>
       </ol>
     </div>
   </section>
@@ -132,13 +139,13 @@
     <h2>5. Mẹo & Ghi chú</h2>
     <div class="card">
       <ul>
-        <li>Luôn lưu prompt và LaTeX code để tránh mất dữ liệu.</li>
-        <li>Sử dụng template phù hợp để giảm thời gian chỉnh sửa.</li>
-        <li>Nếu lỗi compile PDF, kiểm tra cú pháp LaTeX.</li>
-        <li>API key <code>SLIDE_EDU_KEY</code> cần hợp lệ để kết nối AI server.</li>
+        <li>Lưu prompt và LaTeX để tránh mất dữ liệu.</li>
+        <li>Dùng template phù hợp để tiết kiệm thời gian.</li>
+        <li>Nếu lỗi compile PDF → kiểm tra cú pháp LaTeX.</li>
+        <li>API key <code>SLIDE_EDU_KEY</code> phải hợp lệ.</li>
       </ul>
       <div class="note">
-        <strong>Lưu ý:</strong> SlideEdu yêu cầu kết nối Internet để liên hệ với AI server.
+        <strong>Lưu ý:</strong> SlideEdu yêu cầu Internet để kết nối AI.
       </div>
     </div>
   </section>
@@ -147,48 +154,48 @@
     <h2>6. Flow tổng thể</h2>
     <div class="card">
       <ol>
-        <li>Nhập API key nếu chưa có.</li>
-        <li>Nhập tiêu đề và chủ đề → Generate LaTeX code.</li>
-        <li>Hiển thị code trong editor → chỉnh sửa tùy ý.</li>
-        <li>Compile LaTeX → PDF → mở hoặc lưu file.</li>
-        <li>Chat AI hỗ trợ tương tác và gợi ý nội dung.</li>
+        <li>Nhập API key.</li>
+        <li>Generate LaTeX từ chủ đề.</li>
+        <li>Chỉnh sửa trong editor.</li>
+        <li>Compile → PDF.</li>
+        <li>Chat AI hỗ trợ thêm nội dung.</li>
       </ol>
     </div>
   </section>
 
-  <p style="text-align:center; margin-top:30px; font-style:italic;">
-    SlideEdu - Nâng cao hiệu quả học tập và soạn slide nhanh chóng
-  </p>
+  <section id="license-contact" style="margin-top:30px;">
+    <h2>7. Bản quyền & Liên hệ hỗ trợ</h2>
 
-  <hr style="margin:40px 0; border:0; border-top:1px solid #ddd;">
+    <p>SlideEdu hỗ trợ tạo slide học tập nhanh chóng, dễ dùng và miễn phí.</p>
 
-<section id="license-contact" style="margin-top:30px;">
-  <h2>7. Bản quyền & Liên hệ hỗ trợ</h2>
+    <div class="note" style="background-color:#e8f4ff; border-left:6px solid #4a90e2;">
+      <strong>Bản quyền:</strong> © 2025 SlideEdu Việt Nam  
+      <br>Tất cả các quyền được bảo lưu.
+    </div>
 
-  <p>
-    SlideEdu được phát triển để hỗ trợ giáo viên, học sinh và phụ huynh trong việc tạo slide học tập
-    nhanh chóng, chuẩn xác và hiệu quả. Ứng dụng được phát hành miễn phí cho cộng đồng sử dụng.
-  </p>
+    <h3 style="margin-top:20px;">📩 Liên hệ hỗ trợ</h3>
+    <p>Email: <a href="mailto:slideeduviet@gmail.com" style="color:#4a90e2;">slideeduviet@gmail.com</a></p>
+  </section>
 
-  <div class="note" style="
-      background-color:#e8f4ff;
-      border-left:6px solid #4a90e2;
-      padding:12px;
-      margin-top:15px;
-  ">
-    <strong>Bản quyền:</strong> © 2025 SlideEdu Việt Nam  
-    <br>
-    Tất cả các quyền được bảo lưu.
-  </div>
-
-  <h3 style="margin-top:20px;">📩 Liên hệ hỗ trợ</h3>
-  <p>Nếu bạn gặp lỗi, cần hỗ trợ kỹ thuật, hoặc muốn đóng góp ý tưởng cho SlideEdu, vui lòng liên hệ:</p>
-
-  <p style="font-size:1.1em; font-weight:700; color:#4a90e2;">
-    Email: <a href="mailto:slideeduviet@gmail.com" style="color:#4a90e2;">slideeduviet@gmail.com</a>
-  </p>
-</section>
 </main>
+<script>
+(function () {
+  const ua = navigator.userAgent;
+  const isWebView =
+    ua.includes("Zalo") ||
+    ua.includes("ZaloWebView") ||
+    ua.includes("Line") ||
+    ua.includes("FBAN") ||
+    ua.includes("FBAV") ||
+    ua.includes("Instagram") ||
+    ua.includes("webview") ||
+    ua.includes("Telegram");
 
+  if (isWebView) {
+    document.getElementById("webview-warning").style.display = "block";
+    document.getElementById("open-chrome").href = window.location.href;
+  }
+})();
+</script>
 </body>
 </html>
