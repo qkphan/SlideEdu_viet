@@ -1,82 +1,90 @@
-<!-- HERO nhỏ gọn, hiện đại -->
+<!-- HERO -->
 <section class="hero reveal" id="top-hero">
   <div class="hero-content">
     <h1>Hướng dẫn sử dụng SlideEdu Việt</h1>
-    <p>
-      Tạo slide bài giảng, giáo án, đề thi, bài tập bằng AI — nhanh, đẹp, chính xác.
-      Dành cho giáo viên, giảng viên và những người tạo nội dung học tập.
-    </p>
+    <p>Tạo slide bài giảng, giáo án, đề thi, bài tập bằng AI — nhanh, đẹp, chính xác. Dành cho giáo viên, giảng viên và những người tạo nội dung học tập.</p>
   </div>
 </section>
 
 <style>
-/* HERO phong cách tối giản, đồng bộ navbar */
+/* HERO nhỏ - sáng - đồng bộ với footer */
 .hero {
-  padding: 55px 20px; /* nhỏ gọn */
-  background: #1E293B; /* đồng bộ navbar */
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
+  padding: 60px 20px;          /* nhỏ gọn hơn */
+  background: #F8FAFC;         /* sáng, tương phản tốt với footer dark */
+  color: #1E293B;              /* đồng bộ tone chữ footer/navbar */
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   position: relative;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
 }
 
-/* hiệu ứng ánh sáng nhẹ chạy ngang */
+/* ánh sáng mờ nhẹ */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -200px;
-  width: 150px;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.2) 50%,
-    rgba(255,255,255,0) 100%
-  );
-  transform: skewX(-25deg);
-  animation: shine 5s linear infinite;
-  pointer-events: none;
-  opacity: 0.4;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(79,172,254,0.25), rgba(255,255,255,0));
+  top: -60px;
+  right: -60px;
+  filter: blur(20px);
 }
 
-@keyframes shine {
-  0% { left: -200px; }
-  100% { left: 120%; }
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(0,242,254,0.18), rgba(255,255,255,0));
+  bottom: -40px;
+  left: -40px;
+  filter: blur(20px);
 }
 
 .hero-content {
-  max-width: 720px;
-  margin: auto;
-  animation: fadeInUp 0.8s ease forwards;
+  max-width: 760px;
+  z-index: 2;
+  animation: fadeInUp 0.9s ease forwards;
 }
 
+/* Tiêu đề */
 .hero h1 {
   font-size: 2.2em;
   font-weight: 700;
-  margin-bottom: 12px;
-  background: linear-gradient(90deg, #ffffff, #d9e6ff);
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, #1E293B, #334155);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Mô tả */
 .hero p {
-  font-size: 1.05em;
-  opacity: 0.88;
+  font-size: 1.15em;
   line-height: 1.55;
-  margin: 0;
+  opacity: 0.85;
 }
 
-/* fade mượt */
+/* Animation */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(14px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; trgitansform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .hero { padding: 45px 15px; }
-  .hero h1 { font-size: 1.9em; }
-  .hero p { font-size: 0.95em; }
+  .hero {
+    padding: 50px 15px;
+  }
+  .hero h1 {
+    font-size: 1.9em;
+  }
+  .hero p {
+    font-size: 1.05em;
+  }
 }
 </style>
